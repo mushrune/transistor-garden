@@ -1,9 +1,23 @@
 import React from 'react';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Posts from "./pages/Posts";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Menu from "./pages/Menu";
+import Navigator from "./components/Navigator";
 
 function App() {
   return (
     <div className="App">
-      <p>Welcome to transistor garden : )</p>
+        <Routes>
+            <Route path="/" element={<Navigator />}>
+                <Route index element={<Menu />} />
+                <Route path="posts" element={<Posts />} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="*" element={<Navigate replace to="/" /> } />
+            </Route>
+        </Routes>
     </div>
   );
 }
