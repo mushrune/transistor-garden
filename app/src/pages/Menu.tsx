@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const linkFormatting: string = "m-7 text-4xl"
-
 interface Props {
     children: React.ReactNode
     to: string
