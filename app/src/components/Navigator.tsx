@@ -33,14 +33,18 @@ const Navigator: React.FC = () => {
                 }
                 <div className="
                     flex items-center justify-center
-                    mx-10
+                    sm:mx-32
+                    mr-48
+                    ml-24
                     h-full
                 ">
                     <img alt="Transistor Garden LLC logo" src={`${process.env.PUBLIC_URL}/logo512.png`} className="
-                        h-32 w-32 p-4
+                        sm:h-32 sm:w-32 sm:p-4
+                        h-20 w-20 p-2
                     "/>
                     <h1 className="
-                        text-4xl
+                        sm:text-4xl
+                        text-2xl
                         font-serif
                         text-white
                     ">TRANSISTOR GARDEN</h1>
