@@ -1,8 +1,11 @@
 import React from 'react';
+import PageContainer from "../components/PageContainer";
 
 const Contact: React.FC = () => {
     return(
-        <p>This is my contact page!</p>
+        <PageContainer title="contact">
+            <p>This is my contact page!</p>
+        </PageContainer>
     );
 };
 
