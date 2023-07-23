@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { AiOutlineMenu } from 'react-icons/ai';
+import { FiHome } from 'react-icons/fi';
 
 const Navigator: React.FC = () => {
     const [isMenu, setIsMenu] = useState<boolean>(true);
@@ -28,7 +28,7 @@ const Navigator: React.FC = () => {
                         absolute right-0 my-7 mx-10 p-2
                         rounded-md
                     ">
-                    <AiOutlineMenu className="w-10 h-10 invert" />
+                    <FiHome className="w-10 h-10 invert" />
                 </Link>
                 }
                 <div className="

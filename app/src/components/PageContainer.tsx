@@ -11,7 +11,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
 
     if ( error ) {
         return(
-            <div className="min-h-full p-4 transition ease-in-out">
+            <div className="h-fit min-h-full p-4 transition ease-in-out">
                 <div className="
                     h-full p-4
                     bg-red-100
@@ -19,7 +19,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
                     border border-red-700 border-4
                 ">
                     <h1 className="
-                        text-3xl text-red-700 font-thin font-serif italic
+                        text-4xl text-red-700 font-thin font-serif italic
                         flex
                     ">{title}: <h1 className="not-italic font-bold px-2"> error 😠</h1></h1>
                     <div className="p-2">
@@ -32,7 +32,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
 
     if ( loading ) {
         return(
-            <div className="min-h-full p-4 transition ease-in-out">
+            <div className="h-fit min-h-full p-4 transition ease-in-out">
                 <div className="
                 h-full p-4
                 bg-blue-100
@@ -40,7 +40,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
                 border border-blue-500 border-4
             ">
                 <h1 className="
-                    text-3xl text-black font-thin font-serif italic animate-pulse
+                    text-4xl text-black font-thin font-serif italic animate-pulse
                 ">{title}: loading...</h1>
                 <div className="p-2">
 
@@ -51,7 +51,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
     }
 
     return(
-        <div className="min-h-full p-4 transition ease-in-out">
+        <div className="h-fit min-h-full p-4 transition ease-in-out">
             <div className="
                 h-full p-4
                 bg-white
@@ -59,7 +59,7 @@ const PageContainer: React.FC<Props> = ({ title, children, error = false, loadin
                 border border-slate-100 border-4
             ">
                 <h1 className="
-                    text-3xl text-black font-thin font-serif italic
+                    text-4xl text-black font-thin font-serif italic
                 ">{title}:</h1>
                 <div className="p-2">
                     {children}

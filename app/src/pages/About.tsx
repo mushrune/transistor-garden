@@ -22,7 +22,7 @@ const About: React.FC = () => {
             }
         }
 
-        if ( !about && !error ) {
+        if ( !about && !error && isLoading ) {
             fetchAbout()
         }
     }, [about, error, isLoading])
