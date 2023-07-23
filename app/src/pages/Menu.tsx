@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { RiDragDropLine, RiEyeCloseLine } from "react-icons/ri";
 import { FiBox, FiStar, FiLoader } from "react-icons/fi";
 
 interface Props {

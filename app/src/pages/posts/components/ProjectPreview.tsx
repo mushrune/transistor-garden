@@ -10,16 +10,19 @@ interface Props {
 }
 
 const ProjectPreview: React.FC<Props> = ({ title, caption, link, previewPictureUrl }) => {
+    const handleClick = (link: string) => {
+        window.open(link, '_blank', 'noreferrer')
+    }
+
     return(
-        <a
+        <button
             className="
                 w-full h-32
                 my-4
                 flex
                 text-left
             "
-            href={link}
-            target="_blank"
+            onClick={() => {handleClick(link)}}
         >
             <div className="relative w-28 h-28 mr-2 aspect-square" >
                     <img className="
@@ -56,9 +59,8 @@ const ProjectPreview: React.FC<Props> = ({ title, caption, link, previewPictureU
                     <MdOpenInNew size={17} className="mr-1"/>
                     {link}
                 </h3>
-                <a className="hidden w-full h-full absolute z-10" href={link} target="_blank" />
             </div>
-        </a>
+        </button>
     )
 }
 
