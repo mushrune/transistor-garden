@@ -55,6 +55,9 @@ const Projects: React.FC = () => {
 
     return(
         <PageContainer title="projects">
+            <p className="italic">
+                Projects currently in development by Transitor Garden LLC.
+            </p>
             { postList.map( ( previewData ) => (
                 <ProjectPreview {...previewData} key={previewData.id} />
             ))}
