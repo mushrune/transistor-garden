@@ -4,9 +4,6 @@ import { FiInstagram, FiMail, FiGithub } from "react-icons/fi";
 
 const Contact: React.FC = () => {
 
-    const handleInstagram = () => {
-        window.open('https://www.instagram.com/transistor.garden/', '_blank', 'noreferrer')
-    }
     const handleLink = (link: string) => {
         window.open(link, '_blank', 'noreferrer')
     }
