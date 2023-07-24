@@ -56,7 +56,7 @@ const Projects: React.FC = () => {
     return(
         <PageContainer title="projects">
             { postList.map( ( previewData ) => (
-                <ProjectPreview {...previewData} />
+                <ProjectPreview {...previewData} key={previewData.id} />
             ))}
         </PageContainer>
     );

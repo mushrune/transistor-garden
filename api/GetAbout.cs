@@ -20,7 +20,8 @@ namespace api
         {
             log.LogInformation("About page requested.");
 
-            string aboutUrl = "https://tgsitestorage.blob.core.windows.net/sitedata/about/about.md";
+            string storageUrl = Environment.GetEnvironmentVariable("SITE_STORAGE_URL");
+            string aboutUrl = $"{storageUrl}/sitedata/about/about.md";
 
             HttpClient client = new HttpClient();
 
