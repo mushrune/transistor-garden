@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
                 hover:bg-slate-100
             ">
                 <FiMail size={40}/>
-                <h1 className="font-semibold text-3xl mx-3">contact@transistor.garden</h1>
+                <h1 className="font-semibold sm:text-3xl text-xl mx-3">contact@transistor.garden</h1>
             </button>
             <button onClick={() => handleLink('https://www.instagram.com/transistor.garden/')} className="
                 flex items-center my-2 p-2 rounded-xl

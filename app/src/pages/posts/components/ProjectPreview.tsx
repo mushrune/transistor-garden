@@ -21,6 +21,7 @@ const ProjectPreview: React.FC<Props> = ({ title, caption, link, previewPictureU
                 my-4
                 flex
                 text-left
+                flex items-center
             "
             onClick={() => {handleClick(link)}}
         >
@@ -34,12 +35,11 @@ const ProjectPreview: React.FC<Props> = ({ title, caption, link, previewPictureU
             </div>
             <div className="
                 relative
-                w-full h-28
+                w-full h-fit min-h-28
                 bg-slate-100 hover:bg-blue-50
                 p-2 rounded-lg
                 border-2 hover:border-blue-500 border-slate-200 hover:cursor-pointer
                 transition ease-in-out duration-200
-                truncate
             ">
                 <h1 className="
                     font-semibold text-xl
@@ -47,7 +47,6 @@ const ProjectPreview: React.FC<Props> = ({ title, caption, link, previewPictureU
                 ">{title}</h1>
                 <p className="
                     italic font-serif my-1
-                    truncate
                 ">{caption}</p>
                 <h3 className="
                     relative top-0 right-0
