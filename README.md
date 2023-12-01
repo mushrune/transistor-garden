@@ -30,6 +30,8 @@ A React SPA was chosen when considering balance between resource usage, performa
 
 This project uses [__TypeScript__](https://www.typescriptlang.org/). 
 
+_[create-react-app](https://create-react-app.dev/)_ was used for initial setup.
+
 The React SPA utilizes a few NPM packages to operate, notable ones include:
 - __[Tailwind CSS](https://tailwindcss.com/)__: _For in-line CSS utility classes._
 - __[MUI](https://mui.com/)__: _For plug-and-play, accessible components._
