@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 <Typography variant="subtitle2" className="text-[10px] font-center">
                     © {currentYear} TRANSISTOR GARDEN
                 </Typography>
-                <img src="/tg_logo192.png" alt="puck logo" className="h-full ml-2 pr-1"/>
+                <img src="/logo.svg" alt="puck logo" className="h-full ml-auto pr-1 invert"/>
             </div>
         </div>
     )

@@ -47,3 +47,5 @@ export const MUIThemeOptions: ThemeOptions = {
         },
     },
 };
+
+export default MUIThemeOptions;
