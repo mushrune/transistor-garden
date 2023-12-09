@@ -14,54 +14,55 @@ const title: ReactNode = (
     </span>
 )
 
-const navButtonStyle: string = "h-full w-fit lowercase italic font-normal text-white text-xs sm:text-xl"
+const navButtonStyle: string = "h-full flex-1 mx-2 lowercase italic font-normal text-white text-xs sm:text-xl"
 
 const Navigator: React.FC = () => {
     return(
-        <div>
-            <div className="w-full h-20 sm:h-32 mb-1 sm:mb-5 mt-2" />
-            <div className="
-                fixed top-0
-                w-full h-20 sm:h-32
-                mb-1 sm:mb-5 pt-1 px-0 sm:px-4 flex
-                z-10 backdrop-blur-3xl backdrop-brightness-75
-            ">
-                <div className="px-2 mx-auto max-w-4xl flex-1 flex flex-col">
-                    {title}
-                    <div className="
-                        w-[98%] h-8 sm:h-14 mt-auto mb-2 mx-auto rounded-md
-                        border border-solid border-white border-[1px]
-                        flex justify-around
-                    ">
-                        <Button
-                            size="small"
-                            variant="text"
-                            className={navButtonStyle}
-                        >
-                            about
-                        </Button>
-                        <Button
-                            size="small"
-                            variant="text"
-                            className={navButtonStyle}
-                        >
-                            projects
-                        </Button>
-                        <img src="/logo.svg" alt="puck logo" className="h-full py-1 sm:py-2 ml-2 invert"/>
-                        <Button
-                            size="small"
-                            variant="text"
-                            className={navButtonStyle}
-                        >
-                            contact
-                        </Button>
-                        <Button
-                            size="small"
-                            variant="text"
-                            className={navButtonStyle}
-                        >
-                            blog
-                        </Button>
+        <div className="pt-20 sm:pt-36">
+            <div className="fixed top-0 w-full">
+                <div className="
+                    w-full h-20 sm:h-32 relative
+                    mb-1 sm:mb-5 pt-1 px-0 sm:px-4 flex
+                    z-10 backdrop-blur-3xl backdrop-brightness-75
+                ">
+                    <div className="absolute top-0 h-full w-full backdrop-blur-sm backdrop-opacity-75 z-20" />
+                    <div className="px-2 mx-auto max-w-4xl flex-1 flex flex-col relative">
+                        {title}
+                        <div className="
+                            w-[98%] h-8 sm:h-14 mt-auto mb-2 mx-auto rounded-md
+                            border border-solid border-white border-[1px]
+                            flex justify-around
+                        ">
+                            <Button
+                                size="small"
+                                variant="text"
+                                className={navButtonStyle}
+                            >
+                                about
+                            </Button>
+                            <Button
+                                size="small"
+                                variant="text"
+                                className={navButtonStyle}
+                            >
+                                projects
+                            </Button>
+                            <img src="/logo.svg" alt="puck logo" className="h-full mx-2 sm:mx-8 py-1 sm:py-2 invert"/>
+                            <Button
+                                size="small"
+                                variant="text"
+                                className={navButtonStyle}
+                            >
+                                contact
+                            </Button>
+                            <Button
+                                size="small"
+                                variant="text"
+                                className={navButtonStyle}
+                            >
+                                blog
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
