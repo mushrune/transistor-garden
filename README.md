@@ -2,15 +2,14 @@
 
 This repository contains the source code for the website [transistor.garden](https://transistor.garden). transistor.garden is a React single page application ( SPA ) with an Azure Functions API hosted on [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/).
 
-## Principles of Design
+## Objectives
 
-transistor.garden should reflect the best strengths of the Transistor Garden development practice through its design and implementation. These include the following;
-
-- Accessibility: _Available to most devices & operating systems, and has user-freindly characteristics._
-- Security: _Demonstrates core principles of the CIA triad and always operates in an expected manner._
-- Consumption: _Cost of operation has directly proportional relationship with actual usage of the product._
-
-The primal purpose of the website is to display information about Transistor Garden and sample the capabilities of the practice.
+transistor.garden ( transistorgarden ) is a web application that fulfills the following functional objectives:
+1. tells visitors what transistor garden is and who supports it.
+2. shows off a portfolio of completed or in-progress projects.
+3. is an effective branding tool, encouraging people to support the business.
+4. gives people an effective way to get in contact and stay involved.
+5. has something interesting or fun to keep things light hearted.
 
 ## Technical Details
 
@@ -44,7 +43,3 @@ _For a complete list of packages and dependancies, see package.json in the React
 ### Cloud Architecture
 
 transistor.garden has a small footprint, and thus has limited cloud service needs. An [Azure Static Web Application](https://learn.microsoft.com/en-us/azure/static-web-apps/) is used to serve the website to clients as well as host the Azure Function backend.
-
-## Contributing
-
-Pull requests and issues are welcome. The source code for this application may only be used as a reference.
