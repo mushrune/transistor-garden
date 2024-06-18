@@ -8,10 +8,9 @@ import { createTheme, StyledEngineProvider, ThemeProvider } from "@mui/material/
 import { CssBaseline } from "@mui/material";
 
 import './index.css';
-import App from './App';
-import { MUIThemeOptions } from "./Theme/MUITheme";
+import { MUIThemeOptions } from "./theme/mui_theme";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Routes} from "./Routes";
+import {Routes} from "./routes";
 
 const rootElement = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootElement!);

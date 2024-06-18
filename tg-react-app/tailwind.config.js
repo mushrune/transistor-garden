@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const muiTheme = require("./src/Theme/TailwindCJSBridge")
+const muiTheme = require("./src/theme/tailwind_cjs_bridge")
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
