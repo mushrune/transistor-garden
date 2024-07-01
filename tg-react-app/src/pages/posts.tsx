@@ -1,12 +1,13 @@
 import React from 'react';
-import {Paper, Typography} from "@mui/material";
+import { Typography } from "@mui/material";
+import Page from "../components/page";
 
 const Posts: React.FC = () => {
 
     return(
-        <Paper className="w-full h-[1000px] pt-4 px-8" elevation={0}>
+        <Page>
             <Typography variant="h1">Blog</Typography>
-        </Paper>
+        </Page>
     )
 }
 

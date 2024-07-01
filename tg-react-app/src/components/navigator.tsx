@@ -63,10 +63,10 @@ const Navigator: React.FC = () => {
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("shop")}
+                                onClick={() => navigator("home")}
                                 className={navButtonStyle}
                             >
-                                shop
+                                home
                             </Button>
                             <Button
                                 size="small"
@@ -80,10 +80,10 @@ const Navigator: React.FC = () => {
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("about")}
+                                onClick={() => navigator("shop")}
                                 className={navButtonStyle}
                             >
-                                about
+                                shop
                             </Button>
                             <Button
                                 size="small"

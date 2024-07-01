@@ -1,8 +1,9 @@
 import React from 'react';
+import Page from "../components/page";
 
 const Shop: React.FC = () => {
     return(
-        <div>shop!</div>
+        <Page>shop!</Page>
     )
 }
 
