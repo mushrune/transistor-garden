@@ -1,8 +1,9 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import * as React from 'react';
+import  {useCallback, useEffect, useState} from 'react';
 import {Typography} from "@mui/material";
 import RotatingCube from './three/rotating_cube';
 
-const LandingGraphic: React.FC = () => {
+const Graphic: React.FC = () => {
 
     const [ size, setSize ] = useState<number>(0);
 
@@ -11,8 +12,7 @@ const LandingGraphic: React.FC = () => {
     const parentNodeRef = useCallback( ( node: HTMLElement | null ) => setParentNode( node ), [setParentNode] );
     let handleResize = () => {
         if ( parentNode !== null ) {
-            setSize( parentNode.getBoundingClientRect().width );
-            console.log(size)
+            setSize( parentNode.getBoundingClientRect().width * 0.7 );
         }
     }
 
@@ -29,12 +29,12 @@ const LandingGraphic: React.FC = () => {
     })
 
     return(
-        <div className="w-full max-w-xl my-2 mx-auto px-8">
+        <div className="w-full max-w-xl mt-36 mb-2 sm:mb-12 mx-auto px-8 select-none">
             <div ref={parentNodeRef} className="w-full relative" style={{ height: size }}>
                 <Typography
                     variant="h4"
                     className="
-                        text-[72px] text-center font-normal italic
+                        text-[72px] sm:text-[112px] text-center font-normal italic
                         absolute top-[50%] -translate-y-[50%]
                         z-10 mx-auto w-full
                     "
@@ -45,4 +45,4 @@ const LandingGraphic: React.FC = () => {
     )
 }
 
-export default LandingGraphic;
+export default Graphic;

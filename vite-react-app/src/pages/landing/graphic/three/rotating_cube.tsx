@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import * as React from 'react';
+import { useRef } from 'react';
 import * as THREE from 'three';
 import {Canvas, useFrame} from '@react-three/fiber'
 
@@ -33,7 +34,8 @@ const Scene: React.FC<sceneProps> = ({ size }) => (
             width: size,
             height: size,
             position: 'absolute',
-            top: 0, right: 0
+            top: 0, left: '50%',
+            transform: 'translateX(-50%)'
         }}
     >
         <ambientLight />

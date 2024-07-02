@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import * as React from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Title from './title';
 import logo from '../logo/logo.svg';
 
-const navButtonStyle: string = "h-full flex-1 mx-2 lowercase italic font-normal text-white text-xs sm:text-xl"
+const navButtonStyle: string = "h-full flex-1 mx-2 lowercase italic font-normal text-white text-sm sm:text-[28px]"
 
 const Navigator: React.FC = () => {
 
@@ -59,14 +60,14 @@ const Navigator: React.FC = () => {
                         w-[98%] h-fit mt-auto mb-2 mx-auto rounded-md
                         border border-solid border-white border-[1px]
                     ">
-                        <div className="flex justify-around h-8 sm:h-12">
+                        <div className="flex justify-around h-10 sm:h-16">
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("home")}
+                                onClick={() => navigator("about")}
                                 className={navButtonStyle}
                             >
-                                home
+                                about
                             </Button>
                             <Button
                                 size="small"
@@ -76,7 +77,12 @@ const Navigator: React.FC = () => {
                             >
                                 portfolio
                             </Button>
-                            <img src={logo} alt="puck logo" className="h-8 sm:h-12 mx-2 sm:mx-8 py-1 sm:py-2 invert"/>
+                            <img
+                                src={logo}
+                                alt="puck logo"
+                                className="h-10 sm:h-16 mx-2 sm:mx-8 py-1 sm:py-2 invert"
+                                onClick={ () => navigator("/") }
+                            />
                             <Button
                                 size="small"
                                 variant="text"

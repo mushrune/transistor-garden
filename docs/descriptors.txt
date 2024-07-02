@@ -3,7 +3,7 @@ a maximalist.
 a runner.
 a musician.
 an Azure developer.
-a Google Cloud admin.
+a cloud architect.
 a friend.
 a writer.
 a C# programmer.
@@ -14,11 +14,12 @@ an artist.
 an animal lover.
 a portlander.
 an oregonian.
-from california.
+a californian.
 a hiker.
 an explorer.
 a designer.
 a hacker.
 blue team.
-red team.
 tall.
+a React developer.
+organized.

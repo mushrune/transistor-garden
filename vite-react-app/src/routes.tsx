@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import {RouteObject} from "react-router-dom";
 import App from "./app";
 import Posts from "./pages/posts"
-import Home from "./pages/home/home";
+import Landing from "./pages/landing/landing";
 import Portfolio from "./pages/portfolio";
 import Shop from "./pages/shop";
 import DisplayError from "./pages/display_error";
@@ -13,7 +13,7 @@ export const Routes: RouteObject[] = [
         element: <App />,
         errorElement: <DisplayError />,
         children: [
-            { index: true, path: "home", element: <Home /> },
+            { index: true, path: "", element: <Landing /> },
             { path: "posts", element: <Posts /> },
             { path: "shop", element: <Shop /> },
             { path: "portfolio", element: <Portfolio /> }
