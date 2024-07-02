@@ -1,6 +1,8 @@
-import React, {useMemo} from 'react';
+import * as React from 'react';
+import  { useMemo } from 'react';
 import { useNavigate, useRouteError, isRouteErrorResponse } from "react-router-dom";
-import {Button, Typography} from "@mui/material";
+import { Typography } from "@mui/material";
+import TgButton from "../components/mui/tgButton";
 import logo from '../logo/logo.svg';
 
 const errorMemos: string[] = [
@@ -44,14 +46,14 @@ const DisplayError: React.FC = () => {
                     className="py-1 px-2 mt-2 bg-red-400 rounded-md border-solid border-1 border-red-500">
                     {errorMessage}
                 </Typography>
-                <Button
+                <TgButton
                     variant="contained"
                     size="large"
                     className="mt-2 lowercase"
                     onClick={() => navigate("")}
                 >
                     go home
-                </Button>
+                </TgButton>
             </div>
         </>
     )
