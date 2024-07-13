@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "postcss": "^8.4.39",
+    "mui-markdown": "^1.1.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -33,6 +33,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "postcss": "^8.4.39",
     "react-hook-form": "^7.48.2",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.20.0",

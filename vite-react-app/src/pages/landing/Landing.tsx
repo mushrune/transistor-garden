@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Graphic from "./graphic/graphic";
+import Graphic from "./graphic/Graphic";
 import { Typography } from "@mui/material";
-import TgButton from "../../components/mui/tgButton";
+import TgButton from "../../components/mui/TgButton";
 
 const Landing: React.FC = () => {
     return(

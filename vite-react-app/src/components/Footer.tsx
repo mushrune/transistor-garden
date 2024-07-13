@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import logo from "../logo/logo.svg"
+import logo from "../images/logo.svg"
 
 const Footer: React.FC = () => {
     const currentYear: number = (new Date()).getFullYear();

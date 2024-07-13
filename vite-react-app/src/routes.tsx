@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {RouteObject} from "react-router-dom";
-import App from "./app";
-import Posts from "./pages/posts"
-import Landing from "./pages/landing/landing";
-import Portfolio from "./pages/portfolio";
-import Shop from "./pages/shop";
-import DisplayError from "./pages/display_error";
+import { RouteObject } from "react-router-dom";
+import App from "./App";
+import Landing from "./pages/landing/Landing";
+import Portfolio from "./pages/Portfolio";
+import Shop from "./pages/Shop";
+import DisplayError from "./pages/DisplayError";
+import About from "./pages/About";
+import HireMe from "./pages/hireMe/HireMe";
 
 export const Routes: RouteObject[] = [
     {
@@ -13,10 +14,11 @@ export const Routes: RouteObject[] = [
         element: <App />,
         errorElement: <DisplayError />,
         children: [
-            { index: true, path: "", element: <Landing /> },
-            { path: "posts", element: <Posts /> },
+            { index: true, element: <Landing /> },
+            { path: "about", element: <About /> },
+            { path: "portfolio", element: <Portfolio /> },
             { path: "shop", element: <Shop /> },
-            { path: "portfolio", element: <Portfolio /> }
+            { path: "hire-me", element: <HireMe />}
         ]
     }
 ]

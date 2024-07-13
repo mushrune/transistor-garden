@@ -2,14 +2,16 @@ import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Title from './title';
-import logo from '../logo/logo.svg';
+import Title from './Title';
+import logo from '../images/logo.svg';
 
 const navButtonStyle: string = "h-full flex-1 mx-2 lowercase italic font-normal text-white text-sm sm:text-[28px]"
 
+// this component is wired up to expand when more options are added... will be keeping this here for that purpose.
 const Navigator: React.FC = () => {
 
     let navigator = useNavigate();
+
 
     const [ navNode, setNavNode ] = useState<HTMLElement | null>(null);
     const [ offsetHeight, setOffsetHeight ] = useState<number>(0);
@@ -35,12 +37,10 @@ const Navigator: React.FC = () => {
         }
     })
 
-    // const menuIsSelected = ( subMenu: SubMenu ) => currentSubMenu == subMenu && isOpen;
-
     return(
         <>
             <div style={{paddingTop: offsetHeight}} />
-            {/* primary container for the browser, blurs background when it is open */}
+            {/* primary container for the browser, blurs items behind it */}
             <div ref={navHeightRef} className="Navigator
                 fixed top-0
                 w-full h-fit
@@ -86,18 +86,18 @@ const Navigator: React.FC = () => {
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("shop")}
+                                onClick={() => navigator("hire-me")}
                                 className={navButtonStyle}
                             >
-                                shop
+                                hire me
                             </Button>
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("posts")}
+                                onClick={() => navigator("shop")}
                                 className={navButtonStyle}
                             >
-                                posts
+                                shop
                             </Button>
                         </div>
                     </div>

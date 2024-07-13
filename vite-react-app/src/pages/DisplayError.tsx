@@ -2,8 +2,8 @@ import * as React from 'react';
 import  { useMemo } from 'react';
 import { useNavigate, useRouteError, isRouteErrorResponse } from "react-router-dom";
 import { Typography } from "@mui/material";
-import TgButton from "../components/mui/tgButton";
-import logo from '../logo/logo.svg';
+import TgButton from "../components/mui/TgButton";
+import logo from '../images/logo.svg';
 
 const errorMemos: string[] = [
     "hmm... that isn't right",
@@ -37,19 +37,20 @@ const DisplayError: React.FC = () => {
                 src={logo} alt="puck logo"
                 className="super-center -z-10 w-[80%] invert opacity-10"
             />
-            <div className="super-center flex flex-col w-48">
-                <Typography variant="body1">
+            <div className="super-center flex flex-col w-full px-10">
+                <Typography variant="h4" className="text-center px-4">
                     {errorMemo}
                 </Typography>
+                <Typography variant="body1" className="mt-8 mb-1 text-red-400">error message:</Typography>
                 <Typography
-                    variant="subtitle1"
-                    className="py-1 px-2 mt-2 bg-red-400 rounded-md border-solid border-1 border-red-500">
+                    variant="body1"
+                    className="py-2 px-4 mb-8 bg-red-400 rounded-md">
                     {errorMessage}
                 </Typography>
                 <TgButton
                     variant="contained"
                     size="large"
-                    className="mt-2 lowercase"
+                    className="mt-2 lowercase mx-8"
                     onClick={() => navigate("")}
                 >
                     go home

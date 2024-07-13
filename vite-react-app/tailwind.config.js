@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const muiTheme = require("./src/theme/tailwind_cjs_bridge")
+const theme = require("./src/theme/bridge.cjs")
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -16,10 +16,10 @@ module.exports = {
         serif: ['Playfair Display', 'serif'],
       },
       colors: {
-        'primary': muiTheme.palette.primary.main,
-        'secondary': muiTheme.palette.secondary.main,
-        'background-color': muiTheme.palette.background.default,
-        'paper-color': muiTheme.palette.background.paper
+        'primary': theme.palette.primary.main,
+        'secondary': theme.palette.secondary.main,
+        'background-color': theme.palette.background.default,
+        'paper-color': theme.palette.background.paper
       },
     },
   },

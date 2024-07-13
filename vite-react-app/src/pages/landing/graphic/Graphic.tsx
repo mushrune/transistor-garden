@@ -1,7 +1,7 @@
 import * as React from 'react';
 import  {useCallback, useEffect, useState} from 'react';
 import {Typography} from "@mui/material";
-import RotatingCube from './three/rotating_cube';
+import RotatingCube from './three/RotatingCube';
 
 const Graphic: React.FC = () => {
 

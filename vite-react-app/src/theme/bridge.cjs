@@ -3,5 +3,5 @@
 // This bridge exists to convert the ESM exports in MUITheme.ts to CJS exports for tailwind.config.js
 // Another solution would be to directly manipulate the transpilation stack and somehow handle the conversion there, but I'd rather have a bridge file
 
-const muiTheme = require('./mui_theme')
-module.exports = muiTheme
+import theme from './theme';
+module.exports = theme;
