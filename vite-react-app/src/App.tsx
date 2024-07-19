@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigator from "./components/Navigator";
 
-function App() {
+const App: React.FC = () => {
     return (
       <div className="App w-[100%] flex flex-col min-h-screen">
           <Navigator />
