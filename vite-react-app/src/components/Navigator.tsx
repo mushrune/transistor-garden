@@ -12,7 +12,6 @@ const Navigator: React.FC = () => {
 
     let navigator = useNavigate();
 
-
     const [ navNode, setNavNode ] = useState<HTMLElement | null>(null);
     const [ offsetHeight, setOffsetHeight ] = useState<number>(0);
 
@@ -43,7 +42,7 @@ const Navigator: React.FC = () => {
             {/* primary container for the browser, blurs items behind it */}
             <div ref={navHeightRef} className="Navigator
                 fixed top-0
-                w-full h-fit
+                w-full h-fit z-[3000]
                 backdrop-blur-2xl backdrop-brightness-75
             ">
                 {/* this extra div is here to control how wide the navigator is at different screen resolutions*/}
@@ -52,7 +51,7 @@ const Navigator: React.FC = () => {
                 ">
                     {/* blurs navigator to create a "shine" effect */}
                     <div
-                        className="absolute top-0 h-full w-full backdrop-blur-sm backdrop-opacity-90 z-20"
+                        className="absolute top-0 h-full w-full backdrop-blur-sm backdrop-opacity-90 z-[3030]"
                         style={{ pointerEvents: "none" }}
                     />
                     <Title />
