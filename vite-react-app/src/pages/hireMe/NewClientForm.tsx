@@ -28,11 +28,9 @@ const NewClientForm:React.FC = () => {
         trigger,
         watch,
         formState: { errors}
-    } = useForm<IFormInput>({
-        mode: 'onChange'
-    });
+    } = useForm<IFormInput>();
 
-    // watches contact info so updating one resolves errors for the whole section
+    // effects for managing phone & email form validation
     const phoneNumberWatch = watch('phone_number');
     const emailWatch = watch('email_address');
     const contactIsTouched = () => getFieldState('email_address').isTouched || getFieldState('phone_number').isTouched
@@ -45,6 +43,23 @@ const NewClientForm:React.FC = () => {
         ? true
         : "please enter the name of the business you are representing"
 
+    const validatePhoneNumber = ( value: string ): boolean | string => {
+
+        if ( !!value ) return emailRegex.test( value )
+            ? true
+            : "invalid phone number"
+
+        // if there is a valid email address, return true
+        if ( emailRegex.test( getValues('email_address') ) ) return true;
+
+
+
+        return false;
+    }
+
+    const validateEmailAddress = ( value: string ): true | string => emailRegex.test( value )
+        ? true
+        : "invalid email address"
 
     const onSubmit: SubmitHandler<IFormInput> = data => console.log(data)
 
@@ -96,9 +111,9 @@ const NewClientForm:React.FC = () => {
                     className="w-full mb-4"
                     {...register("phone_number", {
                         /* behold - a very stinky validation function for the exact behavior i want */
-                        validate:  ( value: string ): boolean | string => !!value && !phoneRegex.test(value)
+                        validate: ( value: string ): boolean | string => !!value && !phoneRegex.test(value)
                             ? "phone number is invalid"
-                            : phoneRegex.test(value) || emailRegex.test( getValues('email_address') ) || !getFieldState('phone_number').isDirty
+                            : phoneRegex.test(value) || emailRegex.test( getValues('email_address') )
                     })}
                     error={ !!errors.phone_number }
                     helperText={ errors.phone_number?.message }
@@ -112,7 +127,7 @@ const NewClientForm:React.FC = () => {
                         /* flags if the email is invalid, produces an error if the field is empty and the phone number is invalid / empty as well */
                         validate: ( value: string ): boolean | string => !!value && !emailRegex.test(value)
                             ? "email address is invalid"
-                            : emailRegex.test(value) || phoneRegex.test( getValues('phone_number' ) ) || !getFieldState('phone_number').isDirty
+                            : emailRegex.test(value) || phoneRegex.test( getValues('phone_number' ) )
                     })}
                     error={ !!errors.email_address }
                     helperText={ errors.email_address?.message }
