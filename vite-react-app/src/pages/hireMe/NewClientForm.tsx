@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
-import {Checkbox, FormControlLabel, TextField, Typography} from "@mui/material";
+import { Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
 import TgButton from "../../components/mui/TgButton.tsx";
-import {useEffect, useState} from "react";
+import { useState } from "react";
 
 interface IFormInput {
     name: string;
@@ -23,19 +23,15 @@ const NewClientForm:React.FC = () => {
     const {
         register,
         handleSubmit,
-        getFieldState,
-        getValues,
-        trigger,
-        watch,
         formState: { errors}
     } = useForm<IFormInput>();
 
-    // effects for managing phone & email form validation
-    const phoneNumberWatch = watch('phone_number');
-    const emailWatch = watch('email_address');
-    const contactIsTouched = () => getFieldState('email_address').isTouched || getFieldState('phone_number').isTouched
-    useEffect( () => { if ( contactIsTouched() ) trigger('phone_number') }, [ emailWatch, trigger ]);
-    useEffect( () => { if ( contactIsTouched() ) trigger('email_address') }, [ phoneNumberWatch, trigger ]);
+    // // effects for managing phone & email form validation
+    // const phoneNumberWatch = watch('phone_number');
+    // const emailWatch = watch('email_address');
+    // const contactIsTouched = () => getFieldState('email_address').isTouched || getFieldState('phone_number').isTouched
+    // useEffect( () => { if ( contactIsTouched() ) trigger('phone_number') }, [ emailWatch, trigger ]);
+    // useEffect( () => { if ( contactIsTouched() ) trigger('email_address') }, [ phoneNumberWatch, trigger ]);
 
     const handleRepresentationChange = ( event: any ) => setIsRepresentation( event.target.checked );
 
@@ -43,23 +39,13 @@ const NewClientForm:React.FC = () => {
         ? true
         : "please enter the name of the business you are representing"
 
-    const validatePhoneNumber = ( value: string ): boolean | string => {
-
-        if ( !!value ) return emailRegex.test( value )
+    const validatePhoneNumber = ( value: string ): true | string => phoneRegex.test( value )
             ? true
-            : "invalid phone number"
-
-        // if there is a valid email address, return true
-        if ( emailRegex.test( getValues('email_address') ) ) return true;
-
-
-
-        return false;
-    }
+            : "invalid phone number";
 
     const validateEmailAddress = ( value: string ): true | string => emailRegex.test( value )
         ? true
-        : "invalid email address"
+        : "invalid email address";
 
     const onSubmit: SubmitHandler<IFormInput> = data => console.log(data)
 
@@ -104,35 +90,30 @@ const NewClientForm:React.FC = () => {
             </div>
             {/* contact info block*/}
             <div className="w-full my-8">
-                <Typography variant="h5" className="w-full text-center italic mb-2 font-normal">contact info *</Typography>
+                <Typography variant="h5" className="w-full text-center italic mb-2 font-normal">contact info</Typography>
                 <TextField
-                    label = "phone number"
+                    label = "phone number *"
                     variant="filled"
                     className="w-full mb-4"
                     {...register("phone_number", {
                         /* behold - a very stinky validation function for the exact behavior i want */
-                        validate: ( value: string ): boolean | string => !!value && !phoneRegex.test(value)
-                            ? "phone number is invalid"
-                            : phoneRegex.test(value) || emailRegex.test( getValues('email_address') )
+                        validate: validatePhoneNumber,
                     })}
                     error={ !!errors.phone_number }
                     helperText={ errors.phone_number?.message }
                 />
-                <Typography variant="subtitle1" className="w-full text-center mb-2 italic">and / or</Typography>
                 <TextField
-                    label = "email address"
+                    label = "email address *"
                     variant="filled"
                     className="w-full"
                     {...register("email_address", {
                         /* flags if the email is invalid, produces an error if the field is empty and the phone number is invalid / empty as well */
-                        validate: ( value: string ): boolean | string => !!value && !emailRegex.test(value)
-                            ? "email address is invalid"
-                            : emailRegex.test(value) || phoneRegex.test( getValues('phone_number' ) )
+                        validate: validateEmailAddress,
                     })}
                     error={ !!errors.email_address }
                     helperText={ errors.email_address?.message }
                 />
-                { ( errors.email_address || errors.phone_number ) && <Typography variant="subtitle1" color="error" className="mt-2">please enter a valid email address and / or phone number.</Typography> }
+                {/*{ ( errors.email_address || errors.phone_number ) && <Typography variant="subtitle1" color="error" className="mt-2">please enter a valid email address and / or phone number.</Typography> }*/}
             </div>
             {/*project info block*/}
             <div className="w-full my-8">
