@@ -57,16 +57,16 @@ const Navigator: React.FC = () => {
                     <Title />
                     <div className="
                         w-[98%] h-fit mt-auto mb-2 mx-auto rounded-md
-                        border border-solid border-white border-[1px]
+                        border-solid border-white border-[1px]
                     ">
                         <div className="flex justify-around h-10 sm:h-16">
                             <Button
                                 size="small"
                                 variant="text"
-                                onClick={() => navigator("about")}
+                                onClick={() => navigator("")}
                                 className={navButtonStyle}
                             >
-                                about
+                                home
                             </Button>
                             <Button
                                 size="small"
@@ -80,7 +80,6 @@ const Navigator: React.FC = () => {
                                 src={logo}
                                 alt="puck logo"
                                 className="h-10 sm:h-16 mx-2 sm:mx-8 py-1 sm:py-2 invert"
-                                onClick={ () => navigator("/") }
                             />
                             <Button
                                 size="small"

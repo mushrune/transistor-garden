@@ -37,7 +37,7 @@ const DisplayError: React.FC = () => {
                 src={logo} alt="puck logo"
                 className="super-center -z-10 w-[80%] invert opacity-10"
             />
-            <div className="super-center flex flex-col w-full px-10">
+            <div className="super-center flex flex-col w-full px-10 max-w-2xl">
                 <Typography variant="h4" className="text-center px-4">
                     {errorMemo}
                 </Typography>
